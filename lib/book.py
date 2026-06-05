@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
-
 class Book:
+    """Represents a book in the bookstore."""
+    
     def __init__(self, title, page_count):
         self.title = title
+        # Setter handles the logic for page_count validation
         self.page_count = page_count
 
     @property
@@ -11,11 +12,13 @@ class Book:
 
     @page_count.setter
     def page_count(self, value):
+        # Validate that the page_count is an integer as per requirements
         if isinstance(value, int):
             self._page_count = value
         else:
             print("page_count must be an integer")
-            self._page_count = 0  # Defaulting on invalid input
+            self._page_count = 0 
 
     def turn_page(self):
+        """Simulates turning a page in the book."""
         print("Flipping the page...wow, you read fast!")
